@@ -189,4 +189,7 @@ app.delete('/api/users/:id', function(request, response) {
     });
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8000);
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
