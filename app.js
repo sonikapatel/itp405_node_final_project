@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var cors = require('cors');
 var Spot = require('./spot');
-var ClosingTime = require('./closingTime');
+var ClosingTime = require('./closingtime');
 var SpotType = require('./spotType');
 var StartTime = require('./startTime');
 var User = require('./user');
