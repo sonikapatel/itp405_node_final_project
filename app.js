@@ -3,7 +3,7 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var passwordHash = require('password-hash');
+// var passwordHash = require('password-hash');
 
 var cors = require('cors');
 var Spot = require('./spot');
@@ -133,14 +133,14 @@ app.put('/api/spots/:id', function(request, response) {
 // update user
 // the credentials for this do not work when logging in but i do have another PUT function
 app.put('/api/users/:id', function(request, response) {
-  var hashedPassword = passwordHash.generate(request.body.password);
+//   var hashedPassword = passwordHash.generate(request.body.password);
 
   User
     .where('id', request.params.id)
     .fetch({ require: true })
     .then(function(user) {
       user.set('email', request.body.email);
-      user.set('password', hashedPassword);
+//       user.set('password', hashedPassword);
       return user.save();
     }, function(e) {
       response.status(404).json({
