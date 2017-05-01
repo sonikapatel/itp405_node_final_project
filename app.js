@@ -189,7 +189,6 @@ app.delete('/api/users/:id', function(request, response) {
     });
 });
 
-app.listen(process.env.PORT || 8000);
-server.listen(port, function() {
-    console.log("App is running on port " + port);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
