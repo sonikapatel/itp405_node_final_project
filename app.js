@@ -189,4 +189,4 @@ app.delete('/api/users/:id', function(request, response) {
     });
 });
 
-app.listen(process.env.PORT || 3306);
+app.listen(process.env.PORT || 3000);
