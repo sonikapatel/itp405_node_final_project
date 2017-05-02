@@ -18,7 +18,10 @@ app.use(cors());
 
 //get all spots
 app.get('/api/spots', function(request, response) {
-	Spot.fetchAll().then(function(spots) {
+	Spot.fetchAll({
+  require: true,
+  withRelated: ['spotType', 'closingtime', 'startTime']
+}).then(function(spots) {
 		response.json({
 			spots: spots
 		});
