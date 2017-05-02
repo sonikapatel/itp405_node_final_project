@@ -138,12 +138,16 @@ app.put('/api/spots/:id', function(request, response) {
 app.put('/api/users/:id', function(request, response) {
 //   var hashedPassword = passwordHash.generate(request.body.password);
 
+  // var hashedPassword = passwordHash.generate(request.body.password);
+
   User
     .where('id', request.params.id)
     .fetch({ require: true })
     .then(function(user) {
       user.set('email', request.body.email);
 //       user.set('password', hashedPassword);
+
+      // user.set('password', hashedPassword);
       return user.save();
     }, function(e) {
       response.status(404).json({
@@ -192,4 +196,8 @@ app.delete('/api/users/:id', function(request, response) {
     });
 });
 
+<<<<<<< Updated upstream
 app.listen(process.env.PORT || 3000);
+=======
+app.listen(8000);
+>>>>>>> Stashed changes
